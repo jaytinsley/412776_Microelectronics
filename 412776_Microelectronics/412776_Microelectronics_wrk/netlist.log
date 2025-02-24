@@ -1,0 +1,33 @@
+; Top Design: "412776_Microelectronics_lib:Lab_1_Test:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="412776_Microelectronics_lib:Lab_1_Test:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+; Library Name: 412776_Microelectronics_lib
+; Cell Name: lab_1
+; View Name: schematic
+define lab_1 ( P1  P2 ) 
+;parameters 
+L:L1  P1 N__8 L=10 nH tune{ 6.5 nH to 19.5 nH by 1.3 nH } Noise=yes  
+L:L2  N__8 N__10 L=8 nH tune{ 4 nH to 12 nH by 0.8 nH } Noise=yes  
+C:C2  0 N__8 C=1 pF tune{ 0.5 pF to 1.5 pF by 0.1 pF } 
+C:C3  0 N__10 C=1 pF tune{ 0.5 pF to 1.5 pF by 0.1 pF } 
+L:L3  N__10 P2 L=10 nH tune{ 6.5 nH to 19.5 nH by 1.3 nH } Noise=yes  
+end lab_1
+
+lab_1:X1  N__1 N__0 
+Port:Term2  N__0 0 Num=2 Z=50 Ohm Noise=yes 
+Port:Term1  N__1 0 Num=1 Z=50 Ohm Noise=yes 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=1.0 GHz Stop=10.0 GHz Lin=501 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
