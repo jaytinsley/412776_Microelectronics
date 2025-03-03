@@ -1,0 +1,40 @@
+; Top Design: "lab2_24567707_lib:FilterTestOptimisedProblematic:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="lab2_24567707_lib:FilterTestOptimisedProblematic:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+; Library Name: lab2_24567707_lib
+; Cell Name: FilterOptimisedProblematic
+; View Name: schematic
+define FilterOptimisedProblematic ( P1  P2 ) 
+;parameters 
+PP1020_SL2_EM:SL2_1  P1 N__3 W=12.0 um S=5.0 um N=22 tune{ 10 to 30 by 1 } L1=20.0 um L2=185 um tune{ 100 um to 300 um by 0.5 um } L3=184.5 um tune{ 100 um to 300 um by 0.5 um } LN=0.0 um Wu=10 um UE=10.0 um LExtP1=5.0 um 
+PP1020_SL2_EM:SL2_2  N__3 N__6 W=12.0 um S=5.0 um N=22 tune{ 10 to 30 by 2 } L1=20.0 um L2=218 um tune{ 100 um to 300 um by 1 um } L3=218 um tune{ 100 um to 300 um by 1 um } LN=0.0 um Wu=10 um UE=10.0 um LExtP1=5.0 um 
+PP1020_SL2_EM:SL2_3  N__6 P2 W=12.0 um S=5.0 um N=20 tune{ 10 to 30 by 2 } L1=20.0 um L2=179 um tune{ 100 um to 300 um by 1 um } L3=180 um tune{ 100 um to 300 um by 1 um } LN=0.0 um Wu=10.0 um UE=10.0 um LExtP1=5.0 um 
+PP1020_CAP_PDK:CAPA_1  0 N__3 W=51 um L=51 um ELC=0 ExtP2=1 CAO=1 CPO=1 AirBridge=1 
+PP1020_CAP_PDK:CAPA_2  0 N__6 W=51 um L=59 um ELC=0 ExtP2=1 CAO=1 CPO=1 AirBridge=1 
+end FilterOptimisedProblematic
+
+FilterOptimisedProblematic:X1  N__1 N__0 
+Port:TermG1  N__1 0 Num=1 Z=50 Ohm Noise=yes 
+Port:TermG2  N__0 0 Num=2 Z=50 Ohm Noise=yes 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=0 GHz Stop=10.0 GHz Lin=201 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+PP1020_Corner=0
+PP1020_CornerRES=0
+PP1020_CornerCAP=0
+PP1020_Met2T=2 um
+PP1020_Thickness=50 um
+#include "C:/Users/24567707/Downloads/412776_Microelectronics-main/412776_Microelectronics-main/WIN_PP10_20_DESIGN_KIT_1_0_2/WIN_PP10_20_DESIGN_KIT//circuit/models/common.net"
+#include "C:/Users/24567707/Downloads/412776_Microelectronics-main/412776_Microelectronics-main/WIN_PP10_20_DESIGN_KIT_1_0_2/WIN_PP10_20_DESIGN_KIT//circuit/models/techonology.net"

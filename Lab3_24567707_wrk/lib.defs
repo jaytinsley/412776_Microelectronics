@@ -1,0 +1,4 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+INCLUDE $HPEESOF_DIR/oalibs/dsp.defs
+DEFINE Lab3_24567707_lib Lab3_24567707_lib
+ASSIGN Lab3_24567707_lib libMode shared

@@ -1,0 +1,11 @@
+
+hpeesofsim (*) 512.update2.0 Feb 27 2020, MINT version 5
+    (64-bit windows built: Thu Feb 27, 2020 19:34:00 +0000)
+
+
+SP SP1[1] <lab2_24567707_lib:FilterTestOptimisedProblematic:schematic>   freq=(0 Hz->10 GHz)
+
+
+Resource usage:
+  Total stopwatch time     =    25.56 seconds.
+

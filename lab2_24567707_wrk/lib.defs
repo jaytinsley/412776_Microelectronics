@@ -1,0 +1,5 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+INCLUDE $HPEESOF_DIR/oalibs/dsp.defs
+DEFINE lab2_24567707_lib lab2_24567707_lib
+ASSIGN lab2_24567707_lib libMode shared
+INCLUDE C:/Users/24567707/Downloads/412776_Microelectronics-main/412776_Microelectronics-main/WIN_PP10_20_DESIGN_KIT_1_0_2/WIN_PP10_20_DESIGN_KIT/lib.defs
