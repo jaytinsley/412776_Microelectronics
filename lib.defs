@@ -1,0 +1,5 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+INCLUDE $HPEESOF_DIR/oalibs/dsp.defs
+DEFINE Assingment1_lib Assingment1_lib
+ASSIGN Assingment1_lib libMode shared
+INCLUDE WIN_PP10_20_DESIGN_KIT_1_0_2/WIN_PP10_20_DESIGN_KIT/lib.defs
