@@ -1,0 +1,17 @@
+
+hpeesofsim (*) 552.shp Mar 18 2022, MINT version 5
+    (64-bit windows built: Sat Mar 19, 2022 03:48:38 +0000)
+
+
+***** Simulation started at Mon Mar 24 15:47:56 2025
+      Running on host: "LAB1111403024"
+      In Directory: "C:\Users\24567707\documents\LAB5\data"
+      Process ID: 9696
+
+
+SP SP1[1] <LAB5_lib:ZMatch_1:schematic>   freq=(500 MHz->9.5 GHz)
+
+
+Resource usage:
+  Total stopwatch time     =    24.72 seconds.
+
